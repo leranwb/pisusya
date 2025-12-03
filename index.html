@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Сайт от Леруси-писюси</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', cursive;
+            background: linear-gradient(135deg, #fff0f5 0%, #f0f8ff 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(255, 182, 193, 0.3);
+            border: 8px solid #ffd6e7;
+        }
+        
+        h1 {
+            color: #ff6b9d;
+            margin-bottom: 40px;
+            font-size: 3rem;
+            text-shadow: 3px 3px 0 #ffd1e0;
+            background: linear-gradient(45deg, #ff9ec0, #87cefa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 10px;
+        }
+        
+        .step-btn {
+            padding: 25px 50px;
+            font-size: 28px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 25px auto;
+            display: block;
+            width: 100%;
+            max-width: 400px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            font-weight: bold;
+            font-family: 'Comic Sans MS', cursive;
+        }
+        
+        #btn1 {
+            background: linear-gradient(145deg, #a8e6ff, #87cefa);
+            color: #2c5282;
+            border: 5px solid #d1eeff;
+        }
+        
+        #btn1:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(135, 206, 250, 0.4);
+        }
+        
+        #myImage {
+            display: none;
+            margin: 30px auto;
+            max-width: 500px;
+            width: 100%;
+            border-radius: 20px;
+            border: 8px solid white;
+            box-shadow: 0 10px 25px rgba(135, 206, 250, 0.4);
+        }
+        
+        #btn2 {
+            display: none;
+            background: linear-gradient(145deg, #ffb6d9, #ff9ec0);
+            color: #97266d;
+            border: 5px solid #ffd6e7;
+        }
+        
+        #btn2:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(255, 182, 217, 0.4);
+        }
+        
+        #myText {
+            display: none;
+            background: #fff9fb;
+            margin: 30px auto;
+            padding: 30px;
+            max-width: 550px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(255, 182, 193, 0.3);
+            font-size: 20px;
+            line-height: 1.6;
+            border: 4px solid #ffd1e0;
+            text-align: center;
+        }
+        
+        .completed {
+            opacity: 0.7;
+            cursor: default;
+        }
+        
+        .completed:hover {
+            transform: none !important;
+        }
+        
+        .hearts {
+            font-size: 24px;
+            color: #ff6b9d;
+            margin: 20px 0;
+        }
+        
+        .love-text {
+            font-size: 28px;
+            color: #ff6b9d;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(255, 182, 193, 0.5);
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            margin: 10px 0;
+            border: 3px dashed #ffb6d9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>сайт от Леруси-писюси 💕</h1>
+        
+        <div class="hearts">💖 🦋 🌸 ✨ 💝</div>
+        
+        <button class="step-btn" id="btn1" onclick="showImage()">
+            тык
+        </button>
+        
+        <img id="myImage" src="собачка.jpg" alt="Моя картинка">
+        
+        <button class="step-btn" id="btn2" onclick="showText()">
+            ну и еще тык
+        </button>
+        
+        <div id="myText">
+            <div class="love-text">
+                💕 Писюся, а я тибя люблю! 💕
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showImage() {
+            document.getElementById('myImage').style.display = 'block';
+            document.getElementById('btn2').style.display = 'block';
+            document.getElementById('btn1').classList.add('completed');
+            document.getElementById('btn1').innerHTML = "тыкнуто!";
+            document.getElementById('btn1').onclick = null;
+        }
+        
+        function showText() {
+            document.getElementById('myText').style.display = 'block';
+            document.getElementById('btn2').classList.add('completed');
+            document.getElementById('btn2').innerHTML = "и это тыкнуто!";
+            document.getElementById('btn2').onclick = null;
+            
+            // Плавное появление текста
+            setTimeout(() => {
+                document.getElementById('myText').style.transform = 'scale(1.05)';
+                document.getElementById('myText').style.transition = 'transform 0.3s';
+                setTimeout(() => {
+                    document.getElementById('myText').style.transform = 'scale(1)';
+                }, 300);
+            }, 10);
+        }
+    </script>
+</body>
+</html>
